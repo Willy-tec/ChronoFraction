@@ -11,5 +11,5 @@
     ],
     "name": "Awesome timer",
     "short_name": "Chrono",
-    "start_url": "/index.html"
+    "start_url": "ChronoFraction/index.html"
   }
