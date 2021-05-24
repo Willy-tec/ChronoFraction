@@ -1,7 +1,9 @@
 self.addEventListener('install', (e) => {
+    console.log(caches.open("cache"))
+    console.log('/ChronoFraction/index.html')
     e.waitUntil(
-      caches.open('chrono-store').then((cache) => cache.addAll([
-        '/ChronoFraction/',
+      caches.open("cache").then((cache) =>{return cache.addAll([
+
         '/ChronoFraction/index.html',
         '/ChronoFraction/src/index.js',
         '/ChronoFraction/src/style.css',
@@ -9,7 +11,8 @@ self.addEventListener('install', (e) => {
         '/ChronoFraction/src/Chronometre.css',
         '/ChronoFraction/src/timer.png',
 
-      ])),
+      ]).catch((e)=> console.log(e))
+    }),
     );
   });
 
