@@ -69,7 +69,7 @@ class Chronometre {
     <input class="Chrono_input" data-type="action" id="test" type="number" value = "29"/>
     <input class="Chrono_input" data-type="repos" type="number" value="29"/>
     <input class="Chrono_button" type="button" value="Start/pause"/>
-    <audio id = "beep"><source src="src/BEEP.mp3" type="audio/mpeg"></source></audio>
+    <audio id = "beep"><source src="https://raw.githubusercontent.com/willy-tec/ChronoFraction/main/src/BEEP.mp3" type="audio/mpeg"></source></audio>
     </div>`;
   }
 }
