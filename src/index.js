@@ -85,5 +85,5 @@ app.appendChild(divC);
 if('serviceWorker' in navigator){
   navigator.serviceWorker.register("/ChronoFraction/index.html")
             .then(()=>console.log("register service worker"))
-            .catch(()=>console.log("Cant register :" + e.value))
+            .catch((e)=>console.log("Cant register :" + e.value))
 }
