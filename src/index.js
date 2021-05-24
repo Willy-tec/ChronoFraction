@@ -79,3 +79,11 @@ divC.className = "divC";
 new Chronometre(divC);
 let app = document.getElementById("app");
 app.appendChild(divC);
+
+
+// register service worker
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register("/ChronoFraction/index.html")
+            .then(()=>console.log("register service worker"))
+            .catch(()=>console.log("Cant register :" + e.value))
+}
