@@ -1,0 +1,15 @@
+{
+    "background_color": "purple",
+    "description": "It's a timer used for sport",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "src/timer.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      }
+    ],
+    "name": "Awesome timer",
+    "short_name": "Chrono",
+    "start_url": "/index.html"
+  }
