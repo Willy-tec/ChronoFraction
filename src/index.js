@@ -25,17 +25,18 @@ class Chronometre {
     else this.repos = parseInt(e.target.value, 10);
   }
   async init() {
-    this.da = Date.now();
     while (true) {
       await this.demarre(this.action, 0);
       this.root.querySelectorAll("input")[0].value = this.action;
       await this.demarre(this.repos, 1);
       this.root.querySelectorAll("input")[1].value = this.repos;
-      console.log((this.da - Date.now()) / 1000);
     }
   }
   demarre(time, indice) {
+    this.date = Date.now();
     this.joue = false;
+    let interv = 1000;
+    let nbIter = 0;
     return new Promise((res, rej) => {
       if (!this.chrono)
         this.chrono = setInterval(() => {
@@ -47,21 +48,29 @@ class Chronometre {
             }
             time--;
             this.root.querySelectorAll("input")[indice].value = time;
+            
+            nbIter++;
+            interv = 10 //((nbIter*1000)-(Date.now() - this.date))
+            console.log(Date.now() - this.date)
+            console.log(interv+" "+nbIter)
+
+
+
           } else {
             clearInterval(this.chrono);
             this.chrono = null;
             this.joue = false;
             res("fini");
           }
-        }, 1000);
+        }, interv);
       else {
         clearInterval(this.chrono);
         this.chrono = null;
       }
     });
   }
-  modifie(anon) {
-    anon = 15;
+  chronoRun(){
+    
   }
   render() {
     return `
@@ -115,3 +124,6 @@ window.addEventListener('beforeinstallprompt', (e) => {
       });
   });
 });
+
+if(window.isSecureContext) console.log("secure")
+else console.log("not secure")
