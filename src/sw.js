@@ -4,12 +4,13 @@ self.addEventListener('install', (e) => {
     e.waitUntil(
       caches.open("cache").then((cache) =>{return cache.addAll([
 
-        '/ChronoFraction/index.html',
-        '/ChronoFraction/src/index.js',
-        '/ChronoFraction/src/style.css',
-        '/ChronoFraction/src/BEEP.mp3',
-        '/ChronoFraction/src/Chronometre.css',
-        '/ChronoFraction/src/timer.png',
+        '/ChronoFraction/main/index.html',
+        '/ChronoFraction/main/src/index.js',
+        '/ChronoFraction/main/src/style.css',
+        '/ChronoFraction/main/src/BEEP.mp3',
+        '/ChronoFraction/main/src/Chronometre.css',
+        '/ChronoFraction/main/src/timer.png',
+        'https://raw.githubusercontent.com/willy-tec/ChronoFraction/main/src/BEEP.mp3'
 
       ]).catch((e)=> console.log(e))
     }),
