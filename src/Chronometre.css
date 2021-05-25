@@ -1,17 +1,22 @@
 .Chrono {
     display: flex;
     flex-direction: column;
-    filter: blur(1px);
+    
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   }
-  input[type="number"] {
-    background: none;
+  input[type="text"] {
+    background: linear-gradient(270deg, rgba(0, 255, 0, 0.6),rgba(255, 0, 0, 0.6));
     border: none;
     font-size: 10rem;
     text-align: center;
+    font-family: 'Pattaya', sans-serif;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
   }
   input[type="button"] {
+    font-family: 'Pattaya', sans-serif;
     width: auto;
     font-size: 5rem;
     background: none;
@@ -24,11 +29,17 @@
     -moz-appearance: textfield;
   }
   
-  input[type="number"]:focus {
-    background: none;
+  input[type="text"]:focus {
+
     border: none;
     outline: none;
     font-size: 10rem;
     text-align: center;
   }
   
+  @media (max-width : 720px) {
+    input[type="text"], input[type="button"]{
+
+      font-size: 3rem;
+    }
+  }

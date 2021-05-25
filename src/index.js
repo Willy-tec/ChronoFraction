@@ -34,28 +34,21 @@ class Chronometre {
   }
   demarre(time, indice) {
     this.date = Date.now();
+    this.temp = 0
     this.joue = false;
-    let interv = 1000;
+    let interv = 70;
     let nbIter = 0;
     return new Promise((res, rej) => {
       if (!this.chrono)
         this.chrono = setInterval(() => {
-          if (time > 0) {
-            if (!this.joue && time <= 4) {
+          if (time*1000 > this.temp) {
+            if (!this.joue && this.temp >= (time * 1000)-3200) {
               this.beep.currentTime = 0;
               this.beep.play();
               this.joue = true;
             }
-            time--;
-            this.root.querySelectorAll("input")[indice].value = time;
-            
-            nbIter++;
-            interv = 10 //((nbIter*1000)-(Date.now() - this.date))
-            console.log(Date.now() - this.date)
-            console.log(interv+" "+nbIter)
-
-
-
+            this.temp =Date.now() - this.date;
+            this.root.querySelectorAll("input")[indice].value = this.formatTime(this.temp);
           } else {
             clearInterval(this.chrono);
             this.chrono = null;
@@ -66,17 +59,25 @@ class Chronometre {
       else {
         clearInterval(this.chrono);
         this.chrono = null;
+        this.root.querySelectorAll("input")[1].value = this.repos;
+        this.root.querySelectorAll("input")[0].value = this.action;
+        this.beep.pause();
+        this.beep.currentTime = 0
       }
     });
   }
-  chronoRun(){
-    
+  formatTime(nb){
+
+    let minute = Math.floor(nb /60000)%60
+    let seconde = Math.floor(nb /1000)%60
+    let millis = (nb)%1000
+    return `${minute < 10 ? "0"+minute: minute}:${seconde<10? "0"+seconde: seconde}:${millis<10? "00"+millis: millis < 100 ? "0"+millis: millis}`
   }
   render() {
     return `
     <div class="Chrono">
-    <input class="Chrono_input" data-type="action" id="test" type="number" value = "29"/>
-    <input class="Chrono_input" data-type="repos" type="number" value="29"/>
+    <input class="Chrono_input" data-type="action" id="test" type="text" value = "29"/>
+    <input class="Chrono_input" data-type="repos" type="text" value="29"/>
     <input class="Chrono_button" type="button" value="Start/pause"/>
     <audio id = "beep"><source src="https://raw.githubusercontent.com/willy-tec/ChronoFraction/main/src/BEEP.mp3" type="audio/mpeg"></source></audio>
     </div>`;
