@@ -12,5 +12,6 @@
     "name": "Awesome timer",
     "short_name": "Chrono",
     "start_url": "/",
-    "scope":"/"
+    "scope":"/",
+    "theme_color": "#3367D6"
   }
