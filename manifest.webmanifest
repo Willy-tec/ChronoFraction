@@ -11,7 +11,7 @@
     ],
     "name": "Awesome timer",
     "short_name": "Chrono",
-    "start_url": "/",
-    "scope":"/",
+    "start_url": "https://willy-tec.github.io/ChronoFraction/index.html",
+    "scope":"https://willy-tec.github.io/ChronoFraction/",
     "theme_color": "#3367D6"
   }
