@@ -1,7 +1,7 @@
 {
     "background_color": "purple",
     "description": "It's a timer used for sport",
-    "display": "fullscreen",
+    "display": "standalone",
     "icons": [
       {
         "src": "src/timer.png",
