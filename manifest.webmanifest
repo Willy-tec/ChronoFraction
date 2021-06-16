@@ -11,5 +11,6 @@
     ],
     "name": "Awesome timer",
     "short_name": "Chrono",
-    "start_url": "/ChronoFraction/index.html"
+    "start_url": "/",
+    "scope":"/"
   }
