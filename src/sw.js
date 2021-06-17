@@ -1,8 +1,11 @@
+const OFFLINE_URL = "index.html"
+const CACHE_NAME = "offline"
+
 self.addEventListener('install', (e) => {
     console.log(caches.open("cache"))
     console.log('/ChronoFraction/index.html')
     e.waitUntil(
-      caches.open("cache").then((cache) =>{return cache.addAll([
+/*       caches.open("cache").then((cache) =>{return cache.addAll([
 
         'index.html',
         'src/index.js',
@@ -12,8 +15,15 @@ self.addEventListener('install', (e) => {
         'src/timer.png',
         'src/BEEP.mp3'
 
-      ]).catch((e)=> console.log(e))
-    }),
+      ]).catch((e)=> console.log(e)) */
+
+    //}),
+    (async () => {
+      const cache = await caches.open(CACHE_NAME);
+      // Setting {cache: 'reload'} in the new request will ensure that the response
+      // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
+      await cache.add(new Request(OFFLINE_URL, { cache: "reload" }));
+    })()
     );
   });
 
