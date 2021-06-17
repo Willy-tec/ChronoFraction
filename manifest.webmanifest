@@ -12,6 +12,12 @@
         "src": "src/splash.png",
         "type": "image/png",
         "sizes": "512x512"
+      },
+      {
+        "src": "src/clock192.png",
+        "sizes": "196x196",
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ],
     "name": "Awesome timer",
