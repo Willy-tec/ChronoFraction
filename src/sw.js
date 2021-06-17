@@ -1,4 +1,4 @@
-const OFFLINE_URL = "index.html"
+const OFFLINE_URL = "/index.html"
 const CACHE_NAME = "offline"
 
 self.addEventListener('install', (e) => {
