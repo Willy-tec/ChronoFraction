@@ -39,12 +39,12 @@ self.addEventListener('fetch', (e) => {
 
 const CACHE_NAME = 'cache-and-update';
 const STATIC_ASSETS = [
-  './index.html',
-  './src/index.js',
-  './src/style.css',
-  './src/Chronometre.css',
-  './src/timer.png',
-  './src/BEEP.mp3'
+  '/index.html',
+  '/src/index.js',
+  '/src/style.css',
+  '/src/Chronometre.css',
+  '/src/timer.png',
+  '/src/BEEP.mp3'
 ];
 self.addEventListener('install', (event) => {
   // forces the waiting service worker to become the active service worker.
