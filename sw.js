@@ -62,7 +62,6 @@ function cacheStaticAssets() {
   return caches.open(CACHE_NAME).then((cache) => cache.addAll(STATIC_ASSETS))
 }
 
-const CACHE_NAME = 'cache-and-update';
 self.addEventListener('fetch', (event) => {
   // respond from cache first
   event.respondWith((async function() {
