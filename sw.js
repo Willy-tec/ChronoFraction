@@ -2,8 +2,7 @@ const OFFLINE_URL = "/index.html"
 const CACHE_NAME = "offline"
 
 self.addEventListener('install', (e) => {
-    console.log(caches.open("cache"))
-    console.log('/ChronoFraction/index.html')
+    console.log("install event")
     e.waitUntil(()=>{
       caches.open("cache").then((cache) =>{
         return cache.addAll([
