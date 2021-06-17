@@ -93,7 +93,7 @@ app.appendChild(divC);
 
 // register service worker
 if('serviceWorker' in navigator){
-  navigator.serviceWorker.register("./src/sw.js")
+  navigator.serviceWorker.register("/sw.js")
             .then(()=>console.log("register service worker"))
             .catch((e)=>console.log("Cant register :" + e.value))
 }
