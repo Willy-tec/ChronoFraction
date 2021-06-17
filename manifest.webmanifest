@@ -16,7 +16,7 @@
     ],
     "name": "Awesome timer",
     "short_name": "Chrono",
-    "start_url": "/",
+    "start_url": "/ChronoFraction/",
     "scope":"/",
     "theme_color": "#3367D6"
   }
